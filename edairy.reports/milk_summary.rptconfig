@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__start_60_0</property>
+            <property name="value">Jan 1, 2009</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__end_61_1</property>
+            <property name="value">Jan 31, 2009</property>
+        </structure>
+        <structure>
+            <property name="name">start_60_2</property>
+            <property name="value">2009-01-01</property>
+        </structure>
+        <structure>
+            <property name="name">start_60_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">end_61_3</property>
+            <property name="value">2009-01-31</property>
+        </structure>
+        <structure>
+            <property name="name">end_61_type_</property>
+            <property name="value">date</property>
+        </structure>
+    </list-property>
+</report>
