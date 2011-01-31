@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.1.v20100902 Build &lt;2.6.1.v20100915-1750></property>
+    <property name="units">in</property>
+    <property name="theme">SiteReportLib.defaultTheme</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">CommonReportLib.rptlibrary</property>
+            <property name="namespace">CommonReportLib</property>
+        </structure>
+        <structure>
+            <property name="fileName">SiteReportLib.rptlibrary</property>
+            <property name="namespace">SiteReportLib</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="himage" id="8" extends="SiteReportLib.himage"/>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7"
+ extends="CommonReportLib.Data Source"/>
+    </data-sources>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Portrait" id="9" extends="CommonReportLib.Portrait">
+            <overridden-values>
+                <ref-entry baseId="428" name="Header" id="428"/>
+                <ref-entry baseId="9" id="429"/>
+                <ref-entry baseId="10" id="10"/>
+                <ref-entry baseId="11" id="11"/>
+                <ref-entry baseId="12" id="12"/>
+                <ref-entry baseId="13" id="13"/>
+                <ref-entry baseId="312" name="NewImage2" id="312"/>
+                <ref-entry baseId="14" id="14"/>
+                <ref-entry baseId="15" id="15"/>
+                <ref-entry baseId="461" name="NewTextData3" id="461"/>
+                <ref-entry baseId="462" name="NewTextData4" id="462"/>
+                <ref-entry baseId="463" name="NewTextData6" id="463"/>
+                <ref-entry baseId="464" name="NewTextData7" id="464"/>
+                <ref-entry baseId="115" name="NewGrid2" id="115"/>
+                <ref-entry baseId="127" id="127"/>
+                <ref-entry baseId="116" id="116"/>
+                <ref-entry baseId="117" id="117"/>
+                <ref-entry baseId="118" id="118"/>
+                <ref-entry baseId="119" id="119"/>
+                <ref-entry baseId="126" id="126"/>
+                <ref-entry baseId="128" name="NewText1" id="128"/>
+                <ref-entry baseId="120" id="120"/>
+                <ref-entry baseId="121" name="NewAutoText" id="121"/>
+                <ref-entry baseId="122" id="122"/>
+                <ref-entry baseId="123" name="NewText2" id="123"/>
+                <ref-entry baseId="124" id="124"/>
+                <ref-entry baseId="125" name="NewAutoText1" id="125"/>
+                <ref-entry baseId="16" id="16"/>
+                <ref-entry baseId="18" id="18"/>
+                <ref-entry baseId="20" id="20"/>
+                <ref-entry baseId="455" id="455"/>
+                <ref-entry baseId="456" id="456"/>
+                <ref-entry baseId="429" name="Footer" id="465"/>
+                <ref-entry baseId="435" id="435"/>
+                <ref-entry baseId="436" id="436"/>
+                <ref-entry baseId="437" id="437"/>
+                <ref-entry baseId="441" id="441"/>
+                <ref-entry baseId="442" id="442"/>
+                <ref-entry baseId="443" name="NewGrid1" id="443"/>
+                <ref-entry baseId="444" id="444"/>
+                <ref-entry baseId="445" id="445"/>
+                <ref-entry baseId="446" id="446"/>
+                <ref-entry baseId="447" id="447"/>
+                <ref-entry baseId="448" id="448"/>
+                <ref-entry baseId="449" name="NewAutoText41" id="449"/>
+                <ref-entry baseId="450" id="450"/>
+                <ref-entry baseId="451" name="NewTextData2" id="451"/>
+                <ref-entry baseId="452" id="452"/>
+                <ref-entry baseId="453" name="NewTextData11" id="453"/>
+            </overridden-values>
+        </simple-master-page>
+    </page-setup>
+</report>

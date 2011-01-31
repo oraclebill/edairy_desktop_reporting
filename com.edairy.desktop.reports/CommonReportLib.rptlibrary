@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.1.v20100902 Build &lt;2.6.1.v20100915-1750></property>
+    <property name="units">in</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">5</property>
+        </structure>
+    </list-property>
+    <property name="theme">SiteReportLib.defaultTheme</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">SiteReportLib.rptlibrary</property>
+            <property name="namespace">SiteReportLib</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="5">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost/edairy</property>
+            <property name="odaUser">test</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">dGVzdA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <page-setup>
+        <simple-master-page name="Portrait" id="3">
+            <property name="orientation">portrait</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0in</property>
+            <property name="headerHeight">1in</property>
+            <property name="footerHeight">0.7in</property>
+            <page-header>
+                <grid name="Header" id="428" extends="SiteReportLib.Header">
+                    <overridden-values>
+                        <ref-entry baseId="9" id="9"/>
+                        <ref-entry baseId="10" id="10"/>
+                        <ref-entry baseId="494" id="494"/>
+                        <ref-entry baseId="11" id="11"/>
+                        <ref-entry baseId="12" id="12"/>
+                        <ref-entry baseId="13" id="13"/>
+                        <ref-entry baseId="514" name="NewLabel" id="514">
+                            <property name="marginLeft">0pt</property>
+                        </ref-entry>
+                        <ref-entry baseId="14" id="14"/>
+                        <ref-entry baseId="490" id="490"/>
+                        <ref-entry baseId="467" name="NewText5" id="1855"/>
+                        <ref-entry baseId="465" name="NewText" id="465"/>
+                        <ref-entry baseId="466" name="NewText3" id="466"/>
+                        <ref-entry baseId="16" id="16"/>
+                        <ref-entry baseId="512" id="512"/>
+                        <ref-entry baseId="515" name="NewText2" id="515">
+                            <property name="marginLeft">0pt</property>
+                        </ref-entry>
+                        <ref-entry baseId="516" name="NewTextData111" id="1856">
+                            <property name="marginLeft">0pt</property>
+                        </ref-entry>
+                        <ref-entry baseId="20" id="20"/>
+                        <ref-entry baseId="492" id="492"/>
+                        <ref-entry baseId="496" id="496"/>
+                        <ref-entry baseId="115" name="NewGrid2" id="115"/>
+                        <ref-entry baseId="127" id="127"/>
+                        <ref-entry baseId="116" id="116"/>
+                        <ref-entry baseId="119" id="119"/>
+                        <ref-entry baseId="126" id="126"/>
+                        <ref-entry baseId="128" name="NewText1" id="128"/>
+                        <ref-entry baseId="120" id="120"/>
+                        <ref-entry baseId="121" name="NewAutoText" id="121"/>
+                        <ref-entry baseId="455" id="455"/>
+                        <ref-entry baseId="456" id="456"/>
+                    </overridden-values>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="Footer" id="429" extends="SiteReportLib.Footer">
+                    <overridden-values>
+                        <ref-entry baseId="435" id="435"/>
+                        <ref-entry baseId="436" id="436"/>
+                        <ref-entry baseId="437" id="437"/>
+                        <ref-entry baseId="441" id="441"/>
+                        <ref-entry baseId="442" id="442"/>
+                        <ref-entry baseId="443" name="NewGrid1" id="443"/>
+                        <ref-entry baseId="444" id="444"/>
+                        <ref-entry baseId="445" id="445"/>
+                        <ref-entry baseId="446" id="446"/>
+                        <ref-entry baseId="447" id="447"/>
+                        <ref-entry baseId="448" id="448"/>
+                        <ref-entry baseId="520" name="NewImage1" id="520"/>
+                        <ref-entry baseId="450" id="450"/>
+                        <ref-entry baseId="468" name="NewText6" id="468"/>
+                        <ref-entry baseId="552" name="NewGrid3" id="552"/>
+                        <ref-entry baseId="553" id="553"/>
+                        <ref-entry baseId="554" id="554"/>
+                        <ref-entry baseId="555" id="555"/>
+                        <ref-entry baseId="556" id="556"/>
+                        <ref-entry baseId="476" name="NewGrid21" id="476"/>
+                        <ref-entry baseId="477" id="477"/>
+                        <ref-entry baseId="478" id="478"/>
+                        <ref-entry baseId="481" id="481"/>
+                        <ref-entry baseId="482" id="482"/>
+                        <ref-entry baseId="483" name="NewText11" id="483"/>
+                        <ref-entry baseId="484" id="1857"/>
+                        <ref-entry baseId="485" name="NewAutoText2" id="485"/>
+                        <ref-entry baseId="557" id="557"/>
+                        <ref-entry baseId="453" name="NewTextData11" id="453"/>
+                        <ref-entry baseId="452" id="452"/>
+                        <ref-entry baseId="519" name="NewImage" id="519"/>
+                    </overridden-values>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="Landscape" id="467">
+            <property name="orientation">landscape</property>
+            <property name="headerHeight">1.2in</property>
+            <page-header>
+                <grid name="Header1" id="484" extends="SiteReportLib.Header">
+                    <overridden-values>
+                        <ref-entry baseId="9" id="1858"/>
+                        <ref-entry baseId="10" id="1859"/>
+                        <ref-entry baseId="494" id="1860"/>
+                        <ref-entry baseId="11" id="1861"/>
+                        <ref-entry baseId="12" id="1862"/>
+                        <ref-entry baseId="13" id="1863"/>
+                        <ref-entry baseId="514" name="NewLabel1" id="1864"/>
+                        <ref-entry baseId="14" id="1865"/>
+                        <ref-entry baseId="490" id="1866"/>
+                        <ref-entry baseId="467" name="NewText51" id="1867"/>
+                        <ref-entry baseId="465" name="NewText4" id="1868"/>
+                        <ref-entry baseId="466" name="NewText31" id="1869"/>
+                        <ref-entry baseId="16" id="1870"/>
+                        <ref-entry baseId="512" id="1871"/>
+                        <ref-entry baseId="515" name="NewText21" id="1872"/>
+                        <ref-entry baseId="516" name="NewTextData1111" id="1873"/>
+                        <ref-entry baseId="20" id="1874"/>
+                        <ref-entry baseId="492" id="1875"/>
+                        <ref-entry baseId="496" id="1876"/>
+                        <ref-entry baseId="115" name="NewGrid22" id="1877"/>
+                        <ref-entry baseId="127" id="1878"/>
+                        <ref-entry baseId="116" id="1879"/>
+                        <ref-entry baseId="119" id="1880"/>
+                        <ref-entry baseId="126" id="1881"/>
+                        <ref-entry baseId="128" name="NewText12" id="1882"/>
+                        <ref-entry baseId="120" id="1883"/>
+                        <ref-entry baseId="121" name="NewAutoText1" id="1884"/>
+                        <ref-entry baseId="455" id="1885"/>
+                        <ref-entry baseId="456" id="1886"/>
+                    </overridden-values>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="Footer1" id="516" extends="SiteReportLib.Footer">
+                    <overridden-values>
+                        <ref-entry baseId="435" id="1887"/>
+                        <ref-entry baseId="436" id="1888"/>
+                        <ref-entry baseId="437" id="1889"/>
+                        <ref-entry baseId="441" id="1890"/>
+                        <ref-entry baseId="442" id="1891"/>
+                        <ref-entry baseId="443" name="NewGrid11" id="1892"/>
+                        <ref-entry baseId="444" id="1893"/>
+                        <ref-entry baseId="445" id="1894"/>
+                        <ref-entry baseId="446" id="1895"/>
+                        <ref-entry baseId="447" id="1896"/>
+                        <ref-entry baseId="448" id="1897"/>
+                        <ref-entry baseId="520" name="NewImage11" id="1898"/>
+                        <ref-entry baseId="450" id="1899"/>
+                        <ref-entry baseId="468" name="NewText61" id="1900"/>
+                        <ref-entry baseId="552" name="NewGrid31" id="1901"/>
+                        <ref-entry baseId="553" id="1902"/>
+                        <ref-entry baseId="554" id="1903"/>
+                        <ref-entry baseId="555" id="1904"/>
+                        <ref-entry baseId="556" id="1905"/>
+                        <ref-entry baseId="476" name="NewGrid211" id="1906"/>
+                        <ref-entry baseId="477" id="1907"/>
+                        <ref-entry baseId="478" id="1908"/>
+                        <ref-entry baseId="481" id="1909"/>
+                        <ref-entry baseId="482" id="1910"/>
+                        <ref-entry baseId="483" name="NewText111" id="1911"/>
+                        <ref-entry baseId="484" id="1912"/>
+                        <ref-entry baseId="485" name="NewAutoText21" id="1913"/>
+                        <ref-entry baseId="557" id="1914"/>
+                        <ref-entry baseId="453" name="NewTextData112" id="1915"/>
+                        <ref-entry baseId="452" id="1916"/>
+                        <ref-entry baseId="519" name="NewImage2" id="1917"/>
+                    </overridden-values>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+</library>

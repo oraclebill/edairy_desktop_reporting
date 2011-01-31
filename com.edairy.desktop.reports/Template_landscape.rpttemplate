@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.6.1.v20100902 Build &lt;2.6.1.v20100915-1750></property>
+    <property name="units">in</property>
+    <property name="theme">SiteReportLib.defaultTheme</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">CommonReportLib.rptlibrary</property>
+            <property name="namespace">CommonReportLib</property>
+        </structure>
+        <structure>
+            <property name="fileName">SiteReportLib.rptlibrary</property>
+            <property name="namespace">SiteReportLib</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="himage" id="8" extends="SiteReportLib.himage"/>
+        <scalar-parameter name="dairyName" id="1855" extends="SiteReportLib.dairyName"/>
+        <scalar-parameter name="productlogo" id="1856" extends="SiteReportLib.productlogo"/>
+        <scalar-parameter name="vendorlogo" id="1857" extends="SiteReportLib.vendorlogo"/>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7"
+ extends="CommonReportLib.Data Source"/>
+    </data-sources>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Landscape" id="952" extends="CommonReportLib.Landscape">
+            <overridden-values>
+                <ref-entry baseId="484" name="Header1" id="484"/>
+                <ref-entry baseId="1795" id="1795"/>
+                <ref-entry baseId="1796" id="1796"/>
+                <ref-entry baseId="1797" id="1797"/>
+                <ref-entry baseId="1798" id="1798"/>
+                <ref-entry baseId="1799" id="1799"/>
+                <ref-entry baseId="1800" id="1800"/>
+                <ref-entry baseId="1801" name="NewLabel1" id="1801"/>
+                <ref-entry baseId="1802" id="1802"/>
+                <ref-entry baseId="1803" id="1803"/>
+                <ref-entry baseId="1804" name="NewText51" id="1804"/>
+                <ref-entry baseId="1805" name="NewText4" id="1805"/>
+                <ref-entry baseId="1806" name="NewText31" id="1806"/>
+                <ref-entry baseId="1807" id="1807"/>
+                <ref-entry baseId="1808" id="1808"/>
+                <ref-entry baseId="1809" name="NewText21" id="1809"/>
+                <ref-entry baseId="1810" name="NewTextData1111" id="1810"/>
+                <ref-entry baseId="1811" id="1811"/>
+                <ref-entry baseId="1812" id="1812"/>
+                <ref-entry baseId="1813" id="1813"/>
+                <ref-entry baseId="1814" name="NewGrid22" id="1814"/>
+                <ref-entry baseId="1815" id="1815"/>
+                <ref-entry baseId="1816" id="1816"/>
+                <ref-entry baseId="1817" id="1817"/>
+                <ref-entry baseId="1818" id="1818"/>
+                <ref-entry baseId="1819" name="NewText12" id="1819"/>
+                <ref-entry baseId="1820" id="1820"/>
+                <ref-entry baseId="1821" name="NewAutoText1" id="1821"/>
+                <ref-entry baseId="1822" id="1822"/>
+                <ref-entry baseId="1823" id="1823"/>
+                <ref-entry baseId="516" name="Footer1" id="516"/>
+                <ref-entry baseId="1824" id="1824"/>
+                <ref-entry baseId="1825" id="1825"/>
+                <ref-entry baseId="1826" id="1826"/>
+                <ref-entry baseId="1827" id="1827"/>
+                <ref-entry baseId="1828" id="1828"/>
+                <ref-entry baseId="1829" name="NewGrid11" id="1829"/>
+                <ref-entry baseId="1830" id="1830"/>
+                <ref-entry baseId="1831" id="1831"/>
+                <ref-entry baseId="1832" id="1832"/>
+                <ref-entry baseId="1833" id="1833"/>
+                <ref-entry baseId="1834" id="1834"/>
+                <ref-entry baseId="1835" name="NewImage11" id="1835"/>
+                <ref-entry baseId="1836" id="1836"/>
+                <ref-entry baseId="1837" name="NewText61" id="1837"/>
+                <ref-entry baseId="1838" name="NewGrid31" id="1838"/>
+                <ref-entry baseId="1839" id="1839"/>
+                <ref-entry baseId="1840" id="1840"/>
+                <ref-entry baseId="1841" id="1841"/>
+                <ref-entry baseId="1842" id="1842"/>
+                <ref-entry baseId="1843" name="NewGrid211" id="1843"/>
+                <ref-entry baseId="1844" id="1844"/>
+                <ref-entry baseId="1845" id="1845"/>
+                <ref-entry baseId="1846" id="1846"/>
+                <ref-entry baseId="1847" id="1847"/>
+                <ref-entry baseId="1848" name="NewText111" id="1848"/>
+                <ref-entry baseId="1849" id="1849"/>
+                <ref-entry baseId="1850" name="NewAutoText21" id="1850"/>
+                <ref-entry baseId="1851" id="1851"/>
+                <ref-entry baseId="1852" name="NewTextData112" id="1852"/>
+                <ref-entry baseId="1853" id="1853"/>
+                <ref-entry baseId="1854" name="NewImage2" id="1854"/>
+            </overridden-values>
+        </simple-master-page>
+    </page-setup>
+</report>
