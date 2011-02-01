@@ -5,39 +5,40 @@
     <list-property name="propertyBindings">
         <structure>
             <property name="name">odaDriverClass</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
         <structure>
             <property name="name">odaURL</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
+            <expression name="value" type="javascript">"jdbc:mysql://" +params["host"].value + ":" + params["port"].value + "/" + params["databaseName"].value</expression>
         </structure>
         <structure>
             <property name="name">odaUser</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
         <structure>
             <property name="name">odaAutoCommit</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
         <structure>
             <property name="name">odaIsolationMode</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
         <structure>
             <property name="name">odaPassword</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
         <structure>
             <property name="name">odaJndiName</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
         <structure>
             <property name="name">OdaConnProfileName</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
         <structure>
             <property name="name">OdaConnProfileStorePath</property>
-            <property name="id">5</property>
+            <property name="id">1918</property>
         </structure>
     </list-property>
     <property name="theme">SiteReportLib.defaultTheme</property>
@@ -47,8 +48,13 @@
             <property name="namespace">SiteReportLib</property>
         </structure>
     </list-property>
+    <parameters>
+        <scalar-parameter name="databaseName" id="2045" extends="SiteReportLib.databaseName"/>
+        <scalar-parameter name="port" id="2046" extends="SiteReportLib.port"/>
+        <scalar-parameter name="host" id="2047" extends="SiteReportLib.host"/>
+    </parameters>
     <data-sources>
-        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="5">
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="1918">
             <list-property name="privateDriverProperties">
                 <ex-property>
                     <name>contentBidiFormatStr</name>
@@ -60,9 +66,8 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
-            <property name="odaURL">jdbc:mysql://localhost/edairy</property>
-            <property name="odaUser">test</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">dGVzdA==</encrypted-property>
+            <property name="odaURL">jdbc:mysql://localhost:3306/edairy</property>
+            <property name="odaUser">root</property>
         </oda-data-source>
     </data-sources>
     <page-setup>
@@ -86,7 +91,7 @@
                         </ref-entry>
                         <ref-entry baseId="14" id="14"/>
                         <ref-entry baseId="490" id="490"/>
-                        <ref-entry baseId="467" name="NewText5" id="1855"/>
+                        <ref-entry baseId="467" name="NewText5" id="2111"/>
                         <ref-entry baseId="465" name="NewText" id="465"/>
                         <ref-entry baseId="466" name="NewText3" id="466"/>
                         <ref-entry baseId="16" id="16"/>
@@ -94,7 +99,7 @@
                         <ref-entry baseId="515" name="NewText2" id="515">
                             <property name="marginLeft">0pt</property>
                         </ref-entry>
-                        <ref-entry baseId="516" name="NewTextData111" id="1856">
+                        <ref-entry baseId="516" name="NewTextData111" id="2112">
                             <property name="marginLeft">0pt</property>
                         </ref-entry>
                         <ref-entry baseId="20" id="20"/>
@@ -141,7 +146,7 @@
                         <ref-entry baseId="481" id="481"/>
                         <ref-entry baseId="482" id="482"/>
                         <ref-entry baseId="483" name="NewText11" id="483"/>
-                        <ref-entry baseId="484" id="1857"/>
+                        <ref-entry baseId="484" id="2113"/>
                         <ref-entry baseId="485" name="NewAutoText2" id="485"/>
                         <ref-entry baseId="557" id="557"/>
                         <ref-entry baseId="453" name="NewTextData11" id="453"/>
@@ -157,72 +162,72 @@
             <page-header>
                 <grid name="Header1" id="484" extends="SiteReportLib.Header">
                     <overridden-values>
-                        <ref-entry baseId="9" id="1858"/>
-                        <ref-entry baseId="10" id="1859"/>
-                        <ref-entry baseId="494" id="1860"/>
-                        <ref-entry baseId="11" id="1861"/>
-                        <ref-entry baseId="12" id="1862"/>
-                        <ref-entry baseId="13" id="1863"/>
-                        <ref-entry baseId="514" name="NewLabel1" id="1864"/>
-                        <ref-entry baseId="14" id="1865"/>
-                        <ref-entry baseId="490" id="1866"/>
-                        <ref-entry baseId="467" name="NewText51" id="1867"/>
-                        <ref-entry baseId="465" name="NewText4" id="1868"/>
-                        <ref-entry baseId="466" name="NewText31" id="1869"/>
-                        <ref-entry baseId="16" id="1870"/>
-                        <ref-entry baseId="512" id="1871"/>
-                        <ref-entry baseId="515" name="NewText21" id="1872"/>
-                        <ref-entry baseId="516" name="NewTextData1111" id="1873"/>
-                        <ref-entry baseId="20" id="1874"/>
-                        <ref-entry baseId="492" id="1875"/>
-                        <ref-entry baseId="496" id="1876"/>
-                        <ref-entry baseId="115" name="NewGrid22" id="1877"/>
-                        <ref-entry baseId="127" id="1878"/>
-                        <ref-entry baseId="116" id="1879"/>
-                        <ref-entry baseId="119" id="1880"/>
-                        <ref-entry baseId="126" id="1881"/>
-                        <ref-entry baseId="128" name="NewText12" id="1882"/>
-                        <ref-entry baseId="120" id="1883"/>
-                        <ref-entry baseId="121" name="NewAutoText1" id="1884"/>
-                        <ref-entry baseId="455" id="1885"/>
-                        <ref-entry baseId="456" id="1886"/>
+                        <ref-entry baseId="9" id="2114"/>
+                        <ref-entry baseId="10" id="2115"/>
+                        <ref-entry baseId="494" id="2116"/>
+                        <ref-entry baseId="11" id="2117"/>
+                        <ref-entry baseId="12" id="2118"/>
+                        <ref-entry baseId="13" id="2119"/>
+                        <ref-entry baseId="514" name="NewLabel1" id="2120"/>
+                        <ref-entry baseId="14" id="2121"/>
+                        <ref-entry baseId="490" id="2122"/>
+                        <ref-entry baseId="467" name="NewText51" id="2123"/>
+                        <ref-entry baseId="465" name="NewText4" id="2124"/>
+                        <ref-entry baseId="466" name="NewText31" id="2125"/>
+                        <ref-entry baseId="16" id="2126"/>
+                        <ref-entry baseId="512" id="2127"/>
+                        <ref-entry baseId="515" name="NewText21" id="2128"/>
+                        <ref-entry baseId="516" name="NewTextData1111" id="2129"/>
+                        <ref-entry baseId="20" id="2130"/>
+                        <ref-entry baseId="492" id="2131"/>
+                        <ref-entry baseId="496" id="2132"/>
+                        <ref-entry baseId="115" name="NewGrid22" id="2133"/>
+                        <ref-entry baseId="127" id="2134"/>
+                        <ref-entry baseId="116" id="2135"/>
+                        <ref-entry baseId="119" id="2136"/>
+                        <ref-entry baseId="126" id="2137"/>
+                        <ref-entry baseId="128" name="NewText12" id="2138"/>
+                        <ref-entry baseId="120" id="2139"/>
+                        <ref-entry baseId="121" name="NewAutoText1" id="2140"/>
+                        <ref-entry baseId="455" id="2141"/>
+                        <ref-entry baseId="456" id="2142"/>
                     </overridden-values>
                 </grid>
             </page-header>
             <page-footer>
                 <grid name="Footer1" id="516" extends="SiteReportLib.Footer">
                     <overridden-values>
-                        <ref-entry baseId="435" id="1887"/>
-                        <ref-entry baseId="436" id="1888"/>
-                        <ref-entry baseId="437" id="1889"/>
-                        <ref-entry baseId="441" id="1890"/>
-                        <ref-entry baseId="442" id="1891"/>
-                        <ref-entry baseId="443" name="NewGrid11" id="1892"/>
-                        <ref-entry baseId="444" id="1893"/>
-                        <ref-entry baseId="445" id="1894"/>
-                        <ref-entry baseId="446" id="1895"/>
-                        <ref-entry baseId="447" id="1896"/>
-                        <ref-entry baseId="448" id="1897"/>
-                        <ref-entry baseId="520" name="NewImage11" id="1898"/>
-                        <ref-entry baseId="450" id="1899"/>
-                        <ref-entry baseId="468" name="NewText61" id="1900"/>
-                        <ref-entry baseId="552" name="NewGrid31" id="1901"/>
-                        <ref-entry baseId="553" id="1902"/>
-                        <ref-entry baseId="554" id="1903"/>
-                        <ref-entry baseId="555" id="1904"/>
-                        <ref-entry baseId="556" id="1905"/>
-                        <ref-entry baseId="476" name="NewGrid211" id="1906"/>
-                        <ref-entry baseId="477" id="1907"/>
-                        <ref-entry baseId="478" id="1908"/>
-                        <ref-entry baseId="481" id="1909"/>
-                        <ref-entry baseId="482" id="1910"/>
-                        <ref-entry baseId="483" name="NewText111" id="1911"/>
-                        <ref-entry baseId="484" id="1912"/>
-                        <ref-entry baseId="485" name="NewAutoText21" id="1913"/>
-                        <ref-entry baseId="557" id="1914"/>
-                        <ref-entry baseId="453" name="NewTextData112" id="1915"/>
-                        <ref-entry baseId="452" id="1916"/>
-                        <ref-entry baseId="519" name="NewImage2" id="1917"/>
+                        <ref-entry baseId="435" id="2143"/>
+                        <ref-entry baseId="436" id="2144"/>
+                        <ref-entry baseId="437" id="2145"/>
+                        <ref-entry baseId="441" id="2146"/>
+                        <ref-entry baseId="442" id="2147"/>
+                        <ref-entry baseId="443" name="NewGrid11" id="2148"/>
+                        <ref-entry baseId="444" id="2149"/>
+                        <ref-entry baseId="445" id="2150"/>
+                        <ref-entry baseId="446" id="2151"/>
+                        <ref-entry baseId="447" id="2152"/>
+                        <ref-entry baseId="448" id="2153"/>
+                        <ref-entry baseId="520" name="NewImage11" id="2154"/>
+                        <ref-entry baseId="450" id="2155"/>
+                        <ref-entry baseId="468" name="NewText61" id="2156"/>
+                        <ref-entry baseId="552" name="NewGrid31" id="2157"/>
+                        <ref-entry baseId="553" id="2158"/>
+                        <ref-entry baseId="554" id="2159"/>
+                        <ref-entry baseId="555" id="2160"/>
+                        <ref-entry baseId="556" id="2161"/>
+                        <ref-entry baseId="476" name="NewGrid211" id="2162"/>
+                        <ref-entry baseId="477" id="2163"/>
+                        <ref-entry baseId="478" id="2164"/>
+                        <ref-entry baseId="481" id="2165"/>
+                        <ref-entry baseId="482" id="2166"/>
+                        <ref-entry baseId="483" name="NewText111" id="2167"/>
+                        <ref-entry baseId="484" id="2168"/>
+                        <ref-entry baseId="485" name="NewAutoText21" id="2169"/>
+                        <ref-entry baseId="557" id="2170"/>
+                        <ref-entry baseId="453" name="NewTextData112" id="2171"/>
+                        <ref-entry baseId="452" id="2172"/>
+                        <ref-entry baseId="519" name="NewImage2" id="2173"/>
                     </overridden-values>
                 </grid>
             </page-footer>

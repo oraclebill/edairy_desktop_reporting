@@ -4,19 +4,6 @@
     <property name="units">in</property>
     <property name="theme">defaultTheme</property>
     <parameters>
-        <scalar-parameter name="himage" id="459">
-            <property name="valueType">static</property>
-            <property name="dataType">string</property>
-            <property name="distinct">true</property>
-            <simple-property-list name="defaultValue">
-                <value type="constant">logo1.png</value>
-            </simple-property-list>
-            <property name="paramType">simple</property>
-            <property name="controlType">text-box</property>
-            <structure name="format">
-                <property name="category">Unformatted</property>
-            </structure>
-        </scalar-parameter>
         <scalar-parameter name="dairyName" id="511">
             <property name="valueType">static</property>
             <property name="dataType">string</property>
@@ -31,6 +18,7 @@
             </structure>
         </scalar-parameter>
         <scalar-parameter name="productlogo" id="517">
+            <property name="hidden">true</property>
             <property name="valueType">static</property>
             <property name="dataType">string</property>
             <property name="distinct">true</property>
@@ -44,11 +32,51 @@
             </structure>
         </scalar-parameter>
         <scalar-parameter name="vendorlogo" id="518">
+            <property name="hidden">true</property>
             <property name="valueType">static</property>
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
                 <value type="constant">vendorlogo.png</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="databaseName" id="560">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">edairy</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="port" id="561">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">3306</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="host" id="562">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">localhost</value>
             </simple-property-list>
             <property name="paramType">simple</property>
             <property name="controlType">text-box</property>
@@ -173,11 +201,11 @@
                     <property name="fontFamily">"Arial"</property>
                 </style>
                 <style name="table-header" id="222">
-                    <property name="backgroundColor">#00005B</property>
+                    <property name="backgroundColor">#C0C0C0</property>
                     <property name="fontFamily">"Arial"</property>
                     <property name="fontSize">12pt</property>
                     <property name="fontWeight">bold</property>
-                    <property name="color">#FFFFFF</property>
+                    <property name="color">#000000</property>
                     <property name="textAlign">center</property>
                     <property name="verticalAlign">middle</property>
                 </style>
@@ -400,7 +428,11 @@
                     <property name="colSpan">2</property>
                     <property name="rowSpan">2</property>
                     <property name="paddingBottom">0pt</property>
-                    <text name="NewText5" id="467"/>
+                    <text name="NewText5" id="467">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<VALUE-OF>params["dairyName"].value</VALUE-OF>]]></text-property>
+                    </text>
                     <text name="NewText" id="465"/>
                     <text name="NewText3" id="466"/>
                 </cell>

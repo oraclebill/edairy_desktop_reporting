@@ -8,6 +8,11 @@
             <property name="id">1930</property>
             <expression name="value">200</expression>
         </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">7</property>
+            <expression name="value">"jdbc:mysql://" +params["host"].value + ":" + params["port"].value + "/" + params["databaseName"].value</expression>
+        </structure>
     </list-property>
     <property name="theme">SiteReportLib.defaultTheme</property>
     <text-property name="displayName">Edairy_portrait</text-property>
@@ -25,7 +30,6 @@
         </structure>
     </list-property>
     <parameters>
-        <scalar-parameter name="himage" id="8" extends="SiteReportLib.himage"/>
         <scalar-parameter name="dairyName" id="1228" extends="SiteReportLib.dairyName"/>
         <scalar-parameter name="vendorlogo" id="1386" extends="SiteReportLib.vendorlogo"/>
         <scalar-parameter name="productlogo" id="1387" extends="SiteReportLib.productlogo"/>
@@ -34,6 +38,9 @@
             <property name="isRequired">true</property>
             <property name="dataType">string</property>
             <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">2000-01-04 12:00</value>
+            </simple-property-list>
             <property name="paramType">simple</property>
             <property name="concealValue">false</property>
             <property name="controlType">text-box</property>
@@ -47,6 +54,9 @@
             <property name="isRequired">true</property>
             <property name="dataType">string</property>
             <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">2011-01-04 12:00</value>
+            </simple-property-list>
             <property name="paramType">simple</property>
             <property name="concealValue">false</property>
             <property name="controlType">text-box</property>
@@ -80,30 +90,13 @@
                 <property name="pattern">&lt;</property>
             </structure>
         </scalar-parameter>
+        <scalar-parameter name="databaseName" id="2392" extends="SiteReportLib.databaseName"/>
+        <scalar-parameter name="port" id="2393" extends="SiteReportLib.port"/>
+        <scalar-parameter name="host" id="2394" extends="SiteReportLib.host"/>
     </parameters>
     <data-sources>
         <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7"
- extends="CommonReportLib.Data Source">
-            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
-            <property name="odaURL">jdbc:mysql://localhost/edairy</property>
-            <property name="odaUser">test</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">dGVzdA==</encrypted-property>
-        </oda-data-source>
-        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source1" id="1858">
-            <list-property name="privateDriverProperties">
-                <ex-property>
-                    <name>contentBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-                <ex-property>
-                    <name>metadataBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-            </list-property>
-            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
-            <property name="odaURL">jdbc:mysql://localhost/edairy</property>
-            <property name="odaUser">root</property>
-        </oda-data-source>
+ extends="CommonReportLib.Data Source"/>
     </data-sources>
     <data-sets>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="memberCountDataSet" id="1859">
@@ -148,7 +141,7 @@ if(row["status"] == "Archived"){
 
 
 return true;]]></method>
-            <property name="dataSource">Data Source1</property>
+            <property name="dataSource">Data Source</property>
             <list-property name="resultSet">
                 <structure>
                     <property name="position">1</property>
@@ -243,7 +236,7 @@ group by status]]></xml-property>
 	reportContext.setGlobalVariable("COUNT",previousCount);
 }
 return true;]]></method>
-            <property name="dataSource">Data Source1</property>
+            <property name="dataSource">Data Source</property>
             <list-property name="resultSet">
                 <structure>
                     <property name="position">1</property>
@@ -272,200 +265,33 @@ WHERE  membership.applicationdate > DATE (?) AND membership.applicationdate < DA
             <property name="nullsOrdering">nulls lowest</property>
             <list-property name="parameters">
                 <structure>
-                    <property name="name">param_1</property>
-                    <property name="paramName">fromDate</property>
-                    <property name="dataType">string</property>
-                    <property name="position">1</property>
-                    <property name="isInput">true</property>
-                    <property name="isOutput">false</property>
-                </structure>
-                <structure>
                     <property name="name">param_2</property>
                     <property name="paramName">toDate</property>
                     <property name="dataType">string</property>
-                    <property name="position">2</property>
+                    <property name="position">1</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
             </list-property>
-            <structure name="cachedMetaData">
-                <list-property name="resultSet">
-                    <structure>
-                        <property name="position">1</property>
-                        <property name="name">memberid</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">2</property>
-                        <property name="name">membernumber</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">3</property>
-                        <property name="name">givenname</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">4</property>
-                        <property name="name">effectivedate</property>
-                        <property name="dataType">date-time</property>
-                    </structure>
-                    <structure>
-                        <property name="position">5</property>
-                        <property name="name">COUNT(farm.farmid)</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">6</property>
-                        <property name="name">COUNT(dairylocation.code)</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">7</property>
-                        <property name="name">SUM(cjl.quantity)</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">8</property>
-                        <property name="name">AVG(cjl.quantity)</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">9</property>
-                        <property name="name">SUM(t.amount)</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">10</property>
-                        <property name="name">AVG(t.amount)</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">11</property>
-                        <property name="name">MAX(cg.journaldate)</property>
-                        <property name="dataType">date-time</property>
-                    </structure>
-                    <structure>
-                        <property name="position">12</property>
-                        <property name="name">code</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">13</property>
-                        <property name="name">yearly</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">14</property>
-                        <property name="name">yearly_14</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                </list-property>
-            </structure>
+            <structure name="cachedMetaData"/>
             <method name="beforeOpen"><![CDATA[this.queryText = this.queryText + ", " + params["period"].value + " LIMIT 200";
 ]]></method>
-            <property name="dataSource">Data Source1</property>
-            <list-property name="resultSet">
-                <structure>
-                    <property name="position">1</property>
-                    <property name="name">memberid</property>
-                    <property name="nativeName">memberid</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">2</property>
-                    <property name="name">membernumber</property>
-                    <property name="nativeName">membernumber</property>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="position">3</property>
-                    <property name="name">givenname</property>
-                    <property name="nativeName">givenname</property>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="position">4</property>
-                    <property name="name">effectivedate</property>
-                    <property name="nativeName">effectivedate</property>
-                    <property name="dataType">date-time</property>
-                </structure>
-                <structure>
-                    <property name="position">5</property>
-                    <property name="name">COUNT(farm.farmid)</property>
-                    <property name="nativeName">COUNT(farm.farmid)</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">6</property>
-                    <property name="name">COUNT(dairylocation.code)</property>
-                    <property name="nativeName">COUNT(dairylocation.code)</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">7</property>
-                    <property name="name">SUM(cjl.quantity)</property>
-                    <property name="nativeName">SUM(cjl.quantity)</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">8</property>
-                    <property name="name">AVG(cjl.quantity)</property>
-                    <property name="nativeName">AVG(cjl.quantity)</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">9</property>
-                    <property name="name">SUM(t.amount)</property>
-                    <property name="nativeName">SUM(t.amount)</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">10</property>
-                    <property name="name">AVG(t.amount)</property>
-                    <property name="nativeName">AVG(t.amount)</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">11</property>
-                    <property name="name">MAX(cg.journaldate)</property>
-                    <property name="nativeName">MAX(cg.journaldate)</property>
-                    <property name="dataType">date-time</property>
-                </structure>
-                <structure>
-                    <property name="position">12</property>
-                    <property name="name">code</property>
-                    <property name="nativeName">code</property>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="position">13</property>
-                    <property name="name">yearly</property>
-                    <property name="nativeName">yearly</property>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="position">14</property>
-                    <property name="name">yearly_14</property>
-                    <property name="nativeName">yearly</property>
-                    <property name="dataType">integer</property>
-                </structure>
-            </list-property>
+            <property name="dataSource">Data Source</property>
             <xml-property name="queryText"><![CDATA[SELECT membership.memberid, membership.membernumber, person.givenname, membership.effectivedate,  COUNT(farm.farmid), COUNT(dairylocation.code)
 , SUM(cjl.quantity), AVG(cjl.quantity), SUM(t.amount), AVG(t.amount)
 , MAX(cg.journaldate), dairylocation.code,
 YEAR(cg.journaldate) AS yearly , MONTH(cg.journaldate) AS monthly 
 FROM 
 membership 
-JOIN dairylocation ON membership.dairylocation_defaultroute_id = dairylocation.id  
-JOIN person  ON membership.farmer_member_personid = person.personid		      		
-JOIN farm  ON person.personid = farm.farm_owner_e_id   
-JOIN collectionjournalline cjl ON membership.memberid = cjl.membership_validatedmember_e_id 
-JOIN collectiongroup cg ON cg.journalid = cjl.collectionjournalline_collectionjournal_e_id 
-JOIN account a ON membership.account = a.accountid
-JOIN TRANSACTION t ON a.accountid = t.transaction_account_accountid
+Left JOIN dairylocation ON membership.dairylocation_defaultroute_id = dairylocation.id  
+Left JOIN person  ON membership.farmer_member_personid = person.personid		      		
+Left JOIN farm  ON person.personid = farm.farm_owner_e_id   
+Left JOIN collectionjournalline cjl ON membership.memberid = cjl.membership_validatedmember_e_id 
+Left JOIN collectiongroup cg ON cg.journalid = cjl.collectionjournalline_collectionjournal_e_id 
+Left JOIN account a ON membership.account = a.accountid
+Left JOIN TRANSACTION t ON a.accountid = t.transaction_account_accountid
 WHERE membership.status = 'Active'
- AND membership.applicationdate > DATE (?) AND membership.applicationdate < DATE (?)
+AND membership.applicationdate < DATE (?)
 GROUP BY membership.memberid
 
 ]]></xml-property>
@@ -1831,7 +1657,7 @@ GROUP BY membership.memberid
         <simple-master-page name="Portrait" id="9" extends="CommonReportLib.Portrait">
             <overridden-values>
                 <ref-entry baseId="428" name="Header" id="428"/>
-                <ref-entry baseId="9" id="2370"/>
+                <ref-entry baseId="9" id="2391"/>
                 <ref-entry baseId="10" id="10"/>
                 <ref-entry baseId="494" id="494"/>
                 <ref-entry baseId="11" id="11"/>
@@ -1840,7 +1666,7 @@ GROUP BY membership.memberid
                 <ref-entry baseId="514" name="NewLabel" id="514"/>
                 <ref-entry baseId="14" id="14"/>
                 <ref-entry baseId="490" id="490"/>
-                <ref-entry baseId="1855" name="NewText5" id="1855"/>
+                <ref-entry baseId="1982" name="NewText5" id="1982"/>
                 <ref-entry baseId="465" name="NewText" id="465"/>
                 <ref-entry baseId="466" name="NewText3" id="466"/>
                 <ref-entry baseId="16" id="16"/>
@@ -1849,7 +1675,7 @@ GROUP BY membership.memberid
                     <property name="content">Membership Register / Summary</property>
                     <property name="contentType">auto</property>
                 </ref-entry>
-                <ref-entry baseId="1856" name="NewTextData111" id="1856"/>
+                <ref-entry baseId="1983" name="NewTextData111" id="1983"/>
                 <ref-entry baseId="20" id="20"/>
                 <ref-entry baseId="492" id="492"/>
                 <ref-entry baseId="496" id="496"/>
@@ -1900,7 +1726,7 @@ GROUP BY membership.memberid
                 <ref-entry baseId="481" id="481"/>
                 <ref-entry baseId="482" id="482"/>
                 <ref-entry baseId="483" name="NewText11" id="483"/>
-                <ref-entry baseId="1857" id="1857"/>
+                <ref-entry baseId="1984" id="1984"/>
                 <ref-entry baseId="485" name="NewAutoText2" id="485"/>
                 <ref-entry baseId="557" id="557"/>
                 <ref-entry baseId="453" name="NewTextData11" id="453"/>
