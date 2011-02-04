@@ -53,34 +53,10 @@ BirtDateTime.year(endDate) + "-" + BirtDateTime.month(endDate) + "-" + BirtDateT
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
-                <value type="constant">2009-09-02 12:00</value>
+                <value type="constant">2010-1-2</value>
             </simple-property-list>
             <property name="paramType">simple</property>
             <property name="controlType">text-box</property>
-            <structure name="format">
-                <property name="category">Unformatted</property>
-            </structure>
-        </scalar-parameter>
-        <scalar-parameter name="session" id="2180">
-            <property name="valueType">static</property>
-            <property name="dataType">integer</property>
-            <property name="distinct">true</property>
-            <simple-property-list name="defaultValue">
-                <value type="constant">1</value>
-            </simple-property-list>
-            <list-property name="selectionList">
-                <structure>
-                    <property name="value">1</property>
-                    <property name="label">AM</property>
-                </structure>
-                <structure>
-                    <property name="value">2</property>
-                    <property name="label">PM</property>
-                </structure>
-            </list-property>
-            <property name="paramType">simple</property>
-            <property name="controlType">radio-button</property>
-            <property name="fixedOrder">true</property>
             <structure name="format">
                 <property name="category">Unformatted</property>
             </structure>
@@ -99,25 +75,17 @@ BirtDateTime.year(endDate) + "-" + BirtDateTime.month(endDate) + "-" + BirtDateT
             <list-property name="parameters">
                 <structure>
                     <property name="name">param_1</property>
-                    <property name="paramName">session</property>
-                    <property name="dataType">integer</property>
+                    <property name="paramName">fromDate</property>
+                    <property name="dataType">string</property>
                     <property name="position">1</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
                 <structure>
                     <property name="name">param_2</property>
-                    <property name="paramName">fromDate</property>
-                    <property name="dataType">string</property>
-                    <property name="position">2</property>
-                    <property name="isInput">true</property>
-                    <property name="isOutput">false</property>
-                </structure>
-                <structure>
-                    <property name="name">param_3</property>
                     <property name="paramName">date</property>
                     <property name="dataType">string</property>
-                    <property name="position">3</property>
+                    <property name="position">2</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -225,7 +193,7 @@ JOIN person  ON membership.farmer_member_personid = person.personid
 LEFT JOIN dairylocation ON membership.dairylocation_defaultroute_id = dairylocation.id 
 LEFT JOIN collectionjournalline  ON membership.memberid = collectionjournalline.membership_validatedmember_e_id 
 LEFT JOIN collectiongroup  ON collectiongroup.journalid = collectionjournalline.collectionjournalline_collectionjournal_e_id 
-WHERE collectiongroup.collectionsession_session_e_id = ? and collectiongroup.journaldate = DATE (?) || collectiongroup.journaldate = DATE (?) ]]></xml-property>
+WHERE collectiongroup.journaldate = DATE (?) || collectiongroup.journaldate = DATE (?) ]]></xml-property>
         </oda-data-set>
     </data-sets>
     <styles>
@@ -272,18 +240,31 @@ WHERE collectiongroup.collectionsession_session_e_id = ? and collectiongroup.jou
                 <ref-entry baseId="11" id="11"/>
                 <ref-entry baseId="12" id="12"/>
                 <ref-entry baseId="13" id="13"/>
-                <ref-entry baseId="514" name="NewLabel" id="514">
-                    <property name="text">Report</property>
-                </ref-entry>
-                <ref-entry baseId="14" id="14"/>
-                <ref-entry baseId="490" id="490"/>
                 <ref-entry baseId="2111" name="NewText5" id="2159">
                     <property name="textAlign">left</property>
                 </ref-entry>
+                <ref-entry baseId="14" id="14"/>
+                <ref-entry baseId="515" name="NewText2" id="515">
+                    <property name="content">Daily Milk Intake Record</property>
+                    <property name="contentType">auto</property>
+                </ref-entry>
+                <ref-entry baseId="566" id="566"/>
+                <ref-entry baseId="115" name="NewGrid2" id="115"/>
+                <ref-entry baseId="127" id="127"/>
+                <ref-entry baseId="116" id="116"/>
+                <ref-entry baseId="119" id="119"/>
+                <ref-entry baseId="126" id="126"/>
+                <ref-entry baseId="128" name="NewText1" id="128"/>
+                <ref-entry baseId="120" id="120"/>
+                <ref-entry baseId="121" name="NewAutoText" id="121"/>
+                <ref-entry baseId="16" id="16"/>
+                <ref-entry baseId="512" id="512"/>
+                <ref-entry baseId="2112" name="NewTextData111" id="2160"/>
+                <ref-entry baseId="563" id="563"/>
                 <ref-entry baseId="465" name="NewText" id="465">
                     <property name="content">&lt;VALUE-OF>params["date"].value&lt;/VALUE-OF></property>
                     <property name="contentType">html</property>
-                    <property name="textAlign">left</property>
+                    <property name="textAlign">center</property>
                     <property name="dataSet">memberProduceDataset</property>
                     <list-property name="boundDataColumns">
                         <structure>
@@ -337,33 +318,15 @@ WHERE collectiongroup.collectionsession_session_e_id = ? and collectiongroup.jou
                     </list-property>
                 </ref-entry>
                 <ref-entry baseId="466" name="NewText3" id="466">
-                    <property name="content">&lt;VALUE-OF>if (params["session"].value == 1){&#13;
- "Session: AM" &#13;
- }&#13;
- if (params["session"].value == 2){&#13;
- "Session: PM" &#13;
- }&lt;/VALUE-OF></property>
                     <property name="contentType">html</property>
                     <property name="textAlign">left</property>
                 </ref-entry>
-                <ref-entry baseId="16" id="16"/>
-                <ref-entry baseId="512" id="512"/>
-                <ref-entry baseId="515" name="NewText2" id="515">
-                    <property name="content">Daily Milk Intake Record</property>
-                    <property name="contentType">auto</property>
-                </ref-entry>
-                <ref-entry baseId="2112" name="NewTextData111" id="2160"/>
+                <ref-entry baseId="568" id="568"/>
                 <ref-entry baseId="20" id="20"/>
+                <ref-entry baseId="564" id="564"/>
+                <ref-entry baseId="565" id="565"/>
                 <ref-entry baseId="492" id="492"/>
                 <ref-entry baseId="496" id="496"/>
-                <ref-entry baseId="115" name="NewGrid2" id="115"/>
-                <ref-entry baseId="127" id="127"/>
-                <ref-entry baseId="116" id="116"/>
-                <ref-entry baseId="119" id="119"/>
-                <ref-entry baseId="126" id="126"/>
-                <ref-entry baseId="128" name="NewText1" id="128"/>
-                <ref-entry baseId="120" id="120"/>
-                <ref-entry baseId="121" name="NewAutoText" id="121"/>
                 <ref-entry baseId="455" id="455"/>
                 <ref-entry baseId="456" id="456"/>
                 <ref-entry baseId="429" name="Footer" id="429"/>
@@ -459,7 +422,7 @@ WHERE collectiongroup.collectionsession_session_e_id = ? and collectiongroup.jou
                             <expression name="value" type="javascript">row["quantity"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr" type="javascript">BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
+                    <expression name="filterExpr" type="javascript">dataSetRow["collectionsession_session_e_id"] == 1 &amp;&amp; BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
                 </structure>
                 <structure>
                     <property name="name">PMQty</property>
@@ -474,7 +437,7 @@ WHERE collectiongroup.collectionsession_session_e_id = ? and collectiongroup.jou
                             <expression name="value" type="javascript">row["quantity"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr" type="javascript">BirtDateTime.diffDay(BirtDateTime.addDay( params["fromDate"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
+                    <expression name="filterExpr" type="javascript">dataSetRow["collectionsession_session_e_id"] == 2 &amp;&amp; BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
                 </structure>
                 <structure>
                     <property name="name">TotalQty</property>
@@ -513,6 +476,7 @@ WHERE collectiongroup.collectionsession_session_e_id = ? and collectiongroup.jou
                             <expression name="value" type="javascript">row["quantity"]</expression>
                         </structure>
                     </list-property>
+                    <expression name="filterExpr" type="javascript">BirtDateTime.diffDay(BirtDateTime.addDay( params["fromDate"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
                 </structure>
                 <structure>
                     <property name="name">TotalAMQty</property>
@@ -525,7 +489,7 @@ WHERE collectiongroup.collectionsession_session_e_id = ? and collectiongroup.jou
                             <expression name="value" type="javascript">row["quantity"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr" type="javascript">BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
+                    <expression name="filterExpr" type="javascript">dataSetRow["collectionsession_session_e_id"] == 1 &amp;&amp; BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
                 </structure>
                 <structure>
                     <property name="name">TotalAMQtyAccepted</property>
@@ -614,6 +578,54 @@ if(row["TotalQtyPrevious"] != null &amp;&amp; row["TotalQty"] != null) {&#13;
                             <expression name="value" type="javascript">row["quantity"]</expression>
                         </structure>
                     </list-property>
+                    <expression name="filterExpr" type="javascript">BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
+                </structure>
+                <structure>
+                    <property name="name">TotalPMQTY</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["quantity"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["collectionsession_session_e_id"] == 2 &amp;&amp; BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
+                </structure>
+                <structure>
+                    <property name="name">Grand</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["quantity"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">BirtDateTime.diffDay(BirtDateTime.addDay( params["date"].value, 0), BirtDateTime.addDay(row["journaldate"], 0))==0</expression>
+                </structure>
+                <structure>
+                    <property name="name">RouteCode</property>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>code</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">CONCATENATE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["code"]</expression>
+                        </structure>
+                        <structure>
+                            <property name="name">Separat&amp;or</property>
+                        </structure>
+                        <structure>
+                            <property name="name">Ma&amp;x length</property>
+                        </structure>
+                        <structure>
+                            <property name="name">Sho&amp;w all values</property>
+                        </structure>
+                    </list-property>
                 </structure>
             </list-property>
             <column id="2032">
@@ -644,10 +656,25 @@ if(row["TotalQtyPrevious"] != null &amp;&amp; row["TotalQty"] != null) {&#13;
                         </label>
                     </cell>
                     <cell id="2003"/>
-                    <cell id="2006"/>
+                    <cell id="2006">
+                        <label id="2188">
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Qty PM</text-property>
+                        </label>
+                    </cell>
                     <cell id="2007"/>
-                    <cell id="2181"/>
-                    <cell id="2008"/>
+                    <cell id="2181">
+                        <label id="2189">
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Total</text-property>
+                        </label>
+                    </cell>
+                    <cell id="2008">
+                        <label id="2190">
+                            <property name="textAlign">right</property>
+                            <text-property name="text">% Change</text-property>
+                        </label>
+                    </cell>
                 </row>
             </header>
             <group id="2101">
@@ -679,16 +706,16 @@ if(row["TotalQtyPrevious"] != null &amp;&amp; row["TotalQty"] != null) {&#13;
         this.getStyle().backgroundColor = "white";
 	    i = 0;
     }]]></method>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["Total"] == null || row["Total"] == 0.0</expression>
+                            </structure>
+                        </list-property>
                         <cell id="2104">
-                            <data id="2124">
+                            <data id="2196">
                                 <property name="textAlign">left</property>
-                                <list-property name="visibility">
-                                    <structure>
-                                        <property name="format">all</property>
-                                        <expression name="valueExpr" type="javascript">row["Aggregation"] == null || row["Aggregation"] &lt;= 0</expression>
-                                    </structure>
-                                </list-property>
-                                <property name="resultSetColumn">code</property>
+                                <property name="resultSetColumn">RouteCode</property>
                             </data>
                         </cell>
                         <cell id="2106">
@@ -711,7 +738,7 @@ if(row["TotalQtyPrevious"] != null &amp;&amp; row["TotalQty"] != null) {&#13;
                             <data id="2187">
                                 <property name="style">percent</property>
                                 <property name="textAlign">right</property>
-                                <method name="onRender"><![CDATA[if(dataSetRow["rejected"] == 1){
+                                <method name="onRender"><![CDATA[if(row["rejected"] == 1){
 	this.getStyle().textLineThrough = "Line-through"
 }]]></method>
                                 <property name="resultSetColumn">Total</property>
@@ -752,10 +779,38 @@ per</expression>
                         </data>
                     </cell>
                     <cell id="2025"/>
-                    <cell id="2028"/>
+                    <cell id="2028">
+                        <data id="2191">
+                            <property name="style">percent</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">TotalPMQTY</property>
+                        </data>
+                    </cell>
                     <cell id="2029"/>
-                    <cell id="2183"/>
-                    <cell id="2030"/>
+                    <cell id="2183">
+                        <data id="2193">
+                            <property name="style">percent</property>
+                            <property name="textAlign">right</property>
+                            <method name="onRender"><![CDATA[if(row["rejected"] == 1){
+	this.getStyle().textLineThrough = "Line-through"
+}]]></method>
+                            <property name="resultSetColumn">Grand</property>
+                        </data>
+                    </cell>
+                    <cell id="2030">
+                        <text-data id="2194">
+                            <property name="textAlign">right</property>
+                            <expression name="valueExpr">per= ""&#13;
+if(row["Grand"] != null &amp;&amp; row["GrandTotal"] != null) {&#13;
+	numberis = new Number(((row["Grand"]-row["GrandTotal"] )/row["GrandTotal"] )*100).toFixed(2)&#13;
+	if(numberis != 0){&#13;
+			per = numberis+ "%"&#13;
+		} &#13;
+}&#13;
+per</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
                 </row>
             </footer>
         </table>

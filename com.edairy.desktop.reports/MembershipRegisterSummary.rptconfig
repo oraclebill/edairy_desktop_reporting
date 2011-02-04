@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__dairyName_1228_0</property>
+            <property name="value">Test</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__vendorlogo_1386_1</property>
+            <property name="value">vendorlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__productlogo_1387_2</property>
+            <property name="value">productlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fromDate_1861_3</property>
+            <property name="value">2000-01-04 12:00</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__toDate_1862_4</property>
+            <property name="value">2011-01-04 12:00</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__period_2366_5</property>
+            <property name="value">Month Period</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__databaseName_2392_6</property>
+            <property name="value">edairy</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__port_2393_7</property>
+            <property name="value">3306</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__host_2394_8</property>
+            <property name="value">localhost</property>
+        </structure>
+        <structure>
+            <property name="name">port_2393_9</property>
+            <property name="value">3306</property>
+        </structure>
+        <structure>
+            <property name="name">port_2393_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">databaseName_2392_10</property>
+            <property name="value">edairy</property>
+        </structure>
+        <structure>
+            <property name="name">databaseName_2392_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">productlogo_1387_11</property>
+            <property name="value">productlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">productlogo_1387_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">host_2394_12</property>
+            <property name="value">localhost</property>
+        </structure>
+        <structure>
+            <property name="name">host_2394_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">vendorlogo_1386_13</property>
+            <property name="value">vendorlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">vendorlogo_1386_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_1861_14</property>
+            <property name="value">2000-01-04 12:00</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_1861_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_1862_15</property>
+            <property name="value">2011-01-04 12:00</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_1862_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">dairyName_1228_16</property>
+            <property name="value">Test</property>
+        </structure>
+        <structure>
+            <property name="name">dairyName_1228_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">period_2366_17</property>
+            <property name="value">monthly</property>
+        </structure>
+        <structure>
+            <property name="name">period_2366_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

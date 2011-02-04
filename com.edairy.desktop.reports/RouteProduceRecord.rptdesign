@@ -37,7 +37,7 @@
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
-                <value type="constant"> 1960-01-04 12:00</value>
+                <value type="constant">2010-1-4</value>
             </simple-property-list>
             <property name="paramType">simple</property>
             <property name="controlType">text-box</property>
@@ -50,7 +50,7 @@
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
-                <value type="constant">2011-01-04 12:00</value>
+                <value type="constant">2010-2-4</value>
             </simple-property-list>
             <property name="paramType">simple</property>
             <property name="controlType">text-box</property>
@@ -59,14 +59,18 @@
             </structure>
         </scalar-parameter>
         <scalar-parameter name="routeNumber" id="1994">
-            <property name="valueType">static</property>
+            <property name="valueType">dynamic</property>
+            <property name="dataSetName">routsDateSet</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["code"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["code"]</expression>
+            <expression name="sortByColumn">dataSetRow["code"]</expression>
+            <property name="sortDirection">asc</property>
             <property name="dataType">string</property>
             <property name="distinct">true</property>
-            <simple-property-list name="defaultValue">
-                <value type="constant">-1</value>
-            </simple-property-list>
             <property name="paramType">simple</property>
-            <property name="controlType">text-box</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
             <structure name="format">
                 <property name="category">Unformatted</property>
             </structure>
@@ -246,7 +250,69 @@ LEFT JOIN dairylocation ON membership.dairylocation_defaultroute_id = dairylocat
 LEFT JOIN collectionjournalline  ON membership.memberid = collectionjournalline.membership_validatedmember_e_id 
 LEFT JOIN collectiongroup  ON collectiongroup.journalid = collectionjournalline.collectionjournalline_collectionjournal_e_id 
 LEFT JOIN  collectionsession ON collectiongroup.collectionsession_session_e_id = collectionsession.id
-WHERE dairylocation.code = ? AND membership.effectivedate > DATE (?) AND membership.effectivedate < DATE (?) ]]></xml-property>
+WHERE dairylocation.code = ? 
+AND collectiongroup.journaldate > DATE (?) 
+AND collectiongroup.journaldate < DATE (?) ]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="routsDateSet" id="2184">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">code</property>
+                    <text-property name="displayName">code</text-property>
+                    <text-property name="heading">code</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">code</property>
+                    <property name="nativeName">code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select dairylocation.code
+from dairylocation]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>code</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>60</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>code</design:label>
+            <design:formattingHints>
+              <design:displaySize>60</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
         </oda-data-set>
     </data-sets>
     <styles>
@@ -293,18 +359,31 @@ WHERE dairylocation.code = ? AND membership.effectivedate > DATE (?) AND members
                 <ref-entry baseId="11" id="11"/>
                 <ref-entry baseId="12" id="12"/>
                 <ref-entry baseId="13" id="13"/>
-                <ref-entry baseId="514" name="NewLabel" id="514">
-                    <property name="text">Report</property>
-                </ref-entry>
-                <ref-entry baseId="14" id="14"/>
-                <ref-entry baseId="490" id="490"/>
                 <ref-entry baseId="2111" name="NewText5" id="2159">
                     <property name="textAlign">left</property>
                 </ref-entry>
+                <ref-entry baseId="14" id="14"/>
+                <ref-entry baseId="515" name="NewText2" id="515">
+                    <property name="content">Member Produce Record</property>
+                    <property name="contentType">auto</property>
+                </ref-entry>
+                <ref-entry baseId="566" id="566"/>
+                <ref-entry baseId="115" name="NewGrid2" id="115"/>
+                <ref-entry baseId="127" id="127"/>
+                <ref-entry baseId="116" id="116"/>
+                <ref-entry baseId="119" id="119"/>
+                <ref-entry baseId="126" id="126"/>
+                <ref-entry baseId="128" name="NewText1" id="128"/>
+                <ref-entry baseId="120" id="120"/>
+                <ref-entry baseId="121" name="NewAutoText" id="121"/>
+                <ref-entry baseId="16" id="16"/>
+                <ref-entry baseId="512" id="512"/>
+                <ref-entry baseId="2112" name="NewTextData111" id="2160"/>
+                <ref-entry baseId="563" id="563"/>
                 <ref-entry baseId="465" name="NewText" id="465">
                     <property name="content">&lt;VALUE-OF>"Route " + row["code"] + ", " + row["name"]&lt;/VALUE-OF></property>
                     <property name="contentType">html</property>
-                    <property name="textAlign">left</property>
+                    <property name="textAlign">center</property>
                     <property name="dataSet">memberProduceDataset</property>
                     <list-property name="boundDataColumns">
                         <structure>
@@ -375,26 +454,14 @@ WHERE dairylocation.code = ? AND membership.effectivedate > DATE (?) AND members
                 <ref-entry baseId="466" name="NewText3" id="466">
                     <property name="content">&lt;VALUE-OF>params["fromDate"].value + " to " + params["toDate"].value&lt;/VALUE-OF></property>
                     <property name="contentType">html</property>
-                    <property name="textAlign">left</property>
+                    <property name="textAlign">center</property>
                 </ref-entry>
-                <ref-entry baseId="16" id="16"/>
-                <ref-entry baseId="512" id="512"/>
-                <ref-entry baseId="515" name="NewText2" id="515">
-                    <property name="content">Member Produce Record</property>
-                    <property name="contentType">auto</property>
-                </ref-entry>
-                <ref-entry baseId="2112" name="NewTextData111" id="2160"/>
+                <ref-entry baseId="568" id="568"/>
                 <ref-entry baseId="20" id="20"/>
+                <ref-entry baseId="564" id="564"/>
+                <ref-entry baseId="565" id="565"/>
                 <ref-entry baseId="492" id="492"/>
                 <ref-entry baseId="496" id="496"/>
-                <ref-entry baseId="115" name="NewGrid2" id="115"/>
-                <ref-entry baseId="127" id="127"/>
-                <ref-entry baseId="116" id="116"/>
-                <ref-entry baseId="119" id="119"/>
-                <ref-entry baseId="126" id="126"/>
-                <ref-entry baseId="128" name="NewText1" id="128"/>
-                <ref-entry baseId="120" id="120"/>
-                <ref-entry baseId="121" name="NewAutoText" id="121"/>
                 <ref-entry baseId="455" id="455"/>
                 <ref-entry baseId="456" id="456"/>
                 <ref-entry baseId="429" name="Footer" id="429"/>
@@ -613,6 +680,17 @@ WHERE dairylocation.code = ? AND membership.effectivedate > DATE (?) AND members
                         <data id="2168">
                             <property name="style">date</property>
                             <property name="textAlign">left</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr" type="javascript">if (i == row["membernumber"]){&#13;
+	true&#13;
+}else {&#13;
+ 	i = row["membernumber"]&#13;
+ 	false&#13;
+}</expression>
+                                </structure>
+                            </list-property>
                             <property name="resultSetColumn">journaldate</property>
                         </data>
                     </cell>

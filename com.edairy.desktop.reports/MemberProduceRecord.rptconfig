@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.22" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__productlogo_1986_0</property>
+            <property name="value">productlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__vendorlogo_1987_1</property>
+            <property name="value">vendorlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fromDate_1992_2</property>
+            <property name="value">2009-09-01</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__toDate_1993_3</property>
+            <property name="value">2009-10-01</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__memberNumber_1994_4</property>
+            <property name="value">00026</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__databaseName_2176_5</property>
+            <property name="value">edairy</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__port_2177_6</property>
+            <property name="value">3306</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__host_2178_7</property>
+            <property name="value">localhost</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__dairyName_2180_8</property>
+            <property name="value">Test</property>
+        </structure>
+        <structure>
+            <property name="name">port_2177_9</property>
+            <property name="value">3306</property>
+        </structure>
+        <structure>
+            <property name="name">port_2177_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">databaseName_2176_10</property>
+            <property name="value">edairy</property>
+        </structure>
+        <structure>
+            <property name="name">databaseName_2176_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">productlogo_1986_11</property>
+            <property name="value">productlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">productlogo_1986_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">host_2178_12</property>
+            <property name="value">localhost</property>
+        </structure>
+        <structure>
+            <property name="name">host_2178_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">vendorlogo_1987_13</property>
+            <property name="value">vendorlogo.png</property>
+        </structure>
+        <structure>
+            <property name="name">vendorlogo_1987_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">memberNumber_1994_14</property>
+            <property name="value">26</property>
+        </structure>
+        <structure>
+            <property name="name">memberNumber_1994_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">memberNumber_1994_expr_</property>
+            <property name="value">dataSetRow["membernumber"]</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_1992_15</property>
+            <property name="value">2009-09-01</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_1992_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">dairyName_2180_16</property>
+            <property name="value">Test</property>
+        </structure>
+        <structure>
+            <property name="name">dairyName_2180_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_1993_17</property>
+            <property name="value">2009-10-01</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_1993_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

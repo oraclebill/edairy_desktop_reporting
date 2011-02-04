@@ -53,7 +53,7 @@ BirtDateTime.year(endDate) + "-" + BirtDateTime.month(endDate) + "-" + BirtDateT
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
-                <value type="constant">2009-09-02 12:00</value>
+                <value type="constant">2010-01-02</value>
             </simple-property-list>
             <property name="paramType">simple</property>
             <property name="controlType">text-box</property>
@@ -193,7 +193,8 @@ JOIN person  ON membership.farmer_member_personid = person.personid
 LEFT JOIN dairylocation ON membership.dairylocation_defaultroute_id = dairylocation.id 
 LEFT JOIN collectionjournalline  ON membership.memberid = collectionjournalline.membership_validatedmember_e_id 
 LEFT JOIN collectiongroup  ON collectiongroup.journalid = collectionjournalline.collectionjournalline_collectionjournal_e_id 
-WHERE  collectionjournalline.rejected = 1 and collectiongroup.journaldate = DATE (?) || collectiongroup.journaldate = DATE (?) ]]></xml-property>
+WHERE  collectionjournalline.rejected = 1 
+and (collectiongroup.journaldate = DATE (?) || collectiongroup.journaldate = DATE (?)) ]]></xml-property>
         </oda-data-set>
     </data-sets>
     <styles>
@@ -234,90 +235,21 @@ WHERE  collectionjournalline.rejected = 1 and collectiongroup.journaldate = DATE
         <simple-master-page name="Portrait" id="9" extends="CommonReportLib.Portrait">
             <overridden-values>
                 <ref-entry baseId="428" name="Header" id="428"/>
-                <ref-entry baseId="9" id="2158"/>
+                <ref-entry baseId="9" id="2210"/>
                 <ref-entry baseId="10" id="10"/>
                 <ref-entry baseId="494" id="494"/>
                 <ref-entry baseId="11" id="11"/>
                 <ref-entry baseId="12" id="12"/>
                 <ref-entry baseId="13" id="13"/>
-                <ref-entry baseId="514" name="NewLabel" id="514">
-                    <property name="text">Report</property>
+                <ref-entry baseId="2111" name="NewText5" id="2211">
+                    <property name="textAlign">left</property>
                 </ref-entry>
                 <ref-entry baseId="14" id="14"/>
-                <ref-entry baseId="490" id="490"/>
-                <ref-entry baseId="2111" name="NewText5" id="2159">
-                    <property name="textAlign">left</property>
-                </ref-entry>
-                <ref-entry baseId="465" name="NewText" id="465">
-                    <property name="content">&lt;VALUE-OF>params["date"].value&lt;/VALUE-OF></property>
-                    <property name="contentType">html</property>
-                    <property name="textAlign">left</property>
-                    <property name="dataSet">memberProduceDataset</property>
-                    <list-property name="boundDataColumns">
-                        <structure>
-                            <property name="name">journaldate</property>
-                            <text-property name="displayName">journaldate</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["journaldate"]</expression>
-                            <property name="dataType">date-time</property>
-                        </structure>
-                        <structure>
-                            <property name="name">collectionsession_session_e_id</property>
-                            <text-property name="displayName">collectionsession_session_e_id</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["collectionsession_session_e_id"]</expression>
-                            <property name="dataType">decimal</property>
-                        </structure>
-                        <structure>
-                            <property name="name">code</property>
-                            <text-property name="displayName">code</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["code"]</expression>
-                            <property name="dataType">string</property>
-                        </structure>
-                        <structure>
-                            <property name="name">dairycontainer_dairycontainer_containerid</property>
-                            <text-property name="displayName">dairycontainer_dairycontainer_containerid</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["dairycontainer_dairycontainer_containerid"]</expression>
-                            <property name="dataType">decimal</property>
-                        </structure>
-                        <structure>
-                            <property name="name">quantity</property>
-                            <text-property name="displayName">quantity</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["quantity"]</expression>
-                            <property name="dataType">decimal</property>
-                        </structure>
-                        <structure>
-                            <property name="name">rejected</property>
-                            <text-property name="displayName">rejected</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["rejected"]</expression>
-                            <property name="dataType">integer</property>
-                        </structure>
-                        <structure>
-                            <property name="name">membernumber</property>
-                            <text-property name="displayName">membernumber</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["membernumber"]</expression>
-                            <property name="dataType">string</property>
-                        </structure>
-                        <structure>
-                            <property name="name">givenname</property>
-                            <text-property name="displayName">givenname</text-property>
-                            <expression name="expression" type="javascript">dataSetRow["givenname"]</expression>
-                            <property name="dataType">string</property>
-                        </structure>
-                    </list-property>
-                </ref-entry>
-                <ref-entry baseId="466" name="NewText3" id="466">
-                    <property name="contentType">html</property>
-                    <property name="textAlign">left</property>
-                </ref-entry>
-                <ref-entry baseId="16" id="16"/>
-                <ref-entry baseId="512" id="512"/>
                 <ref-entry baseId="515" name="NewText2" id="515">
                     <property name="content">Daily Rejects Report</property>
                     <property name="contentType">auto</property>
                 </ref-entry>
-                <ref-entry baseId="2112" name="NewTextData111" id="2160"/>
-                <ref-entry baseId="20" id="20"/>
-                <ref-entry baseId="492" id="492"/>
-                <ref-entry baseId="496" id="496"/>
+                <ref-entry baseId="566" id="566"/>
                 <ref-entry baseId="115" name="NewGrid2" id="115"/>
                 <ref-entry baseId="127" id="127"/>
                 <ref-entry baseId="116" id="116"/>
@@ -326,6 +258,24 @@ WHERE  collectionjournalline.rejected = 1 and collectiongroup.journaldate = DATE
                 <ref-entry baseId="128" name="NewText1" id="128"/>
                 <ref-entry baseId="120" id="120"/>
                 <ref-entry baseId="121" name="NewAutoText" id="121"/>
+                <ref-entry baseId="16" id="16"/>
+                <ref-entry baseId="512" id="512"/>
+                <ref-entry baseId="2112" name="NewTextData111" id="2212"/>
+                <ref-entry baseId="563" id="563"/>
+                <ref-entry baseId="465" name="NewText" id="465">
+                    <property name="content">&lt;VALUE-OF>params["date"].value&lt;/VALUE-OF></property>
+                    <property name="contentType">html</property>
+                </ref-entry>
+                <ref-entry baseId="466" name="NewText3" id="466">
+                    <property name="contentType">html</property>
+                    <property name="textAlign">left</property>
+                </ref-entry>
+                <ref-entry baseId="568" id="568"/>
+                <ref-entry baseId="20" id="20"/>
+                <ref-entry baseId="564" id="564"/>
+                <ref-entry baseId="565" id="565"/>
+                <ref-entry baseId="492" id="492"/>
+                <ref-entry baseId="496" id="496"/>
                 <ref-entry baseId="455" id="455"/>
                 <ref-entry baseId="456" id="456"/>
                 <ref-entry baseId="429" name="Footer" id="429"/>
